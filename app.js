@@ -30,7 +30,8 @@ var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri2 = 'http://localhost:3000/home'; // Your redirect uri
 //var redirect_uri2 = process.env.REDIRECT_URI2; // Your redirect uri
 //var redirect_uri = `http://localhost:${PORT}/callback`; // Your redirect uri
-var redirect_uri = process.env.REDIRECT_URI.replace('<PORT>',PORT);
+//var redirect_uri = process.env.REDIRECT_URI.replace('<PORT>',PORT);
+var redirect_uri = process.env.REDIRECT_URI;
 console.log(redirect_uri);
 
 const DBconn = process.env.DATABASE.replace('<DATABASE_PASSWORD>',process.env.DATABASE_PASSWORD);
