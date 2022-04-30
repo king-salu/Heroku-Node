@@ -1,35 +1,43 @@
-# Spotify Accounts Authentication Examples
+# Getting Started with *PARTNER HERO SPOITIFY INTEGRATION* Node App (Backend Deployment)
 
-This project contains basic demos showing the different OAuth 2.0 flows for [authenticating against the Spotify Web API](https://developer.spotify.com/web-api/authorization-guide/).
 
-These examples cover:
+Runs the app in the development mode.\
+Open [https://lit-dawn-26115.herokuapp.com/](https://lit-dawn-26115.herokuapp.com/) to view it in your browser.
 
-* Authorization Code flow
-* Client Credentials flow
-* Implicit Grant flow
+This is the backend development developed using Node. This controls the spotify login authentication process.
 
-## Installation
+## NOTE ⚠️
+*Please note that the config.env file has been removed from the git repository as instructed. It will be forwarded to the assessment supervisor as an email.
+Also, Spotify requires a limit of 25 users to be able to access the application, for testing it will be expected to use my details for testing which will also 
+be forwarded to the assessment supervisor, or preferably a test user can forward their spotify fullname and email to the email address: johndele94@gmail.com
+and I will add it. 👌*
 
-These examples run on Node.js. On [its website](http://www.nodejs.org/download/) you can find instructions on how to install it. You can also follow [this gist](https://gist.github.com/isaacs/579814) for a quick and easy way to install Node.js and npm.
 
-Once installed, clone the repository and install its dependencies running:
+## Database
+The database used fo this was MongoDB NoSQL.
 
-    $ npm install
+## Deployment
+Using Heroku, Deployment was made possible using the Heroku Node.js buildpack
 
-### Using your own credentials
-You will need to register your app and get your own credentials from the Spotify for Developers Dashboard.
+## Implementations
+* Login Screen through Spotify’s authentication method.
+* Logout methods.
+* Display all song descriptions within the “New Releases” and “My Library” in the form of thumbnail previews with their respective album art, title and action button
+* Display all song descriptions within the result section on the home screen in the form of rows alongside their action button.
+* Save only the necessary user and songs information within Firebase *(mongoDB was used instead)*
+* Ability to see and remove any of the songs saved to “My Library” from anywhere they may be accessible from (as for example, the results within the Home Page and the New Releases section).
+* Ability to see and add any of the songs from New Releases and Search Results.
+* Ability to be able to scale the application by changing the window’s dimension without ruining the proposed design (Mobile friendly).
+* Display proper error messages when the HTTP request cannot be completed.
+* Unit testing for the functionality.
 
-To do so, go to [your Spotify for Developers Dashboard](https://beta.developer.spotify.com/dashboard) and create your application. For the examples, we registered these Redirect URIs:
+## Limitations
+The following were not acheivable due to limited time
+* Export “My Library” to my Spotify account as a new playlist.
+* Save “My Library” data into the redux store while it is being used in the app.
+* Typescript as a template for your React project.
+* Persisting favorited data on a NoSQL Database (Firebase, Mongo, etc.).
 
-* http://localhost:8888 (needed for the implicit grant flow)
-* http://localhost:8888/callback
-
-Once you have created your app, replace the `client_id`, `redirect_uri` and `client_secret` in the examples with the ones you get from My Applications.
-
-## Running the examples
-In order to run the different examples, open the folder with the name of the flow you want to try out, and run its `app.js` file. For instance, to run the Authorization Code example do:
-
-    $ cd authorization_code
-    $ node app.js
-
-Then, open `http://localhost:8888` in a browser.
+## Addtions that could have been added if available time was not limited
+* Feedback response when a song is added or removed from My Library
+* A sort for "New Release" to get songs that are and/ or not in my Library
